@@ -12,10 +12,10 @@ Return a gravatar with the .jpg extension, sized 64 x 64 with Mystery Man as the
     require 'SimpleGravatar.class.php';
     $gravatar = new SimpleGravatar;
 
-    echo $gravatar->SetExtension('jpg')
-             ->SetSize(64)
-             ->SetDefault('mm')
-             ->SetSecure()
-             ->GetGravatar(true, 'euantor@mybb.com');
+    echo $gravatar->setExtension('jpg')
+             ->setSize(64)
+             ->setDefault('mm')
+             ->setSecure()
+             ->getGravatar(true, 'euantor@mybb.com');
 
     echo $gravatar->GetGravatar(true, 'anotheremail@domain.com'); // We already set our settings above so if we just want to get another gravatar we don't need to repeat it all.
