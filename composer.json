@@ -1,0 +1,21 @@
+{
+    "name": "euantor/simple-gravatar",
+    "description": "A simple class to automagically generate a Gravatar given an email address.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Euan Torano",
+            "email": "euan@euantor.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.0",
+        "illuminate/support": "4.0.x"
+    },
+    "autoload": {
+        "psr-0": {
+            "Euantor\\SimpleGravatar": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
