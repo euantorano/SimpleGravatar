@@ -47,7 +47,7 @@ class Gravatar
 	 * @access protected
 	 * @var string
 	 */
-	protected $extension = 'png';
+	protected $extension = '.png';
 
 	/**
 	 * The dimentions to be used for the Gravatar.
