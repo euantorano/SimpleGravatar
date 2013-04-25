@@ -176,7 +176,7 @@ class Gravatar
 
 		if (in_array((string) $default, $gravatarDefaults)) {
 			$this->default = (string) $default;
-		} elseif (strpos($default, 'http') AND filter_var($default, FILTER_VALIDATE_URL)) {
+		} elseif (strpos($default, 'http') !== false AND filter_var($default, FILTER_VALIDATE_URL)) {
 			$this->default = urlencode($default);
 		}
 
