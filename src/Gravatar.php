@@ -18,7 +18,7 @@ class Gravatar
 	/**
 	 * Base URL to the Gravatar service.
 	 */
-	const BASEURL        = 'http://www.gravatar.com/avatar/';
+	const BASEURL = 'http://www.gravatar.com/avatar/';
 
 	/**
 	 * Base URL to the Gravatar service for secure connections (over HTTPS).
@@ -26,7 +26,7 @@ class Gravatar
 	const BASEURL_SECURE = 'https://secure.gravatar.com/avatar/';
 
 	/**
-	 * Is the Gravatar to be transported via a secure conenction (HTTPS)?
+	 * Is the Gravatar to be transported via a secure connection (HTTPS)?
 	 *
 	 * @access protected
 	 * @var boolean
@@ -66,7 +66,7 @@ class Gravatar
 	protected $default = 'mm';
 
 	/**
-	 * Should the default Gravatar image be frced even if the user has one?
+	 * Should the default Gravatar image be forced even if the user has one?
 	 *
 	 * @access protected
 	 * @var boolean
@@ -108,8 +108,11 @@ class Gravatar
 	 */
 	public function setEmail($email = '')
 	{
-		if (filter_var((string) $email, FILTER_VALIDATE_EMAIL)) {
-			$this->email = md5(strtolower(trim((string) $email)));
+		$email = (string) $email;
+		$email = trim($email);
+
+		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+			$this->email = md5($email);
 		}
 
 		return $this;
@@ -127,7 +130,7 @@ class Gravatar
 	public function setExtension($extension = '.png')
 	{
 		if (substr($extension, 0, 1) != '.') {
-			$extension = '.'.$extension;
+			$extension = '.' . $extension;
 		}
 
 		$this->extension = $extension;
@@ -154,7 +157,7 @@ class Gravatar
 	/**
 	 * Set the default gravatar
 	 *
-	 * Set the default Gravatar to be used if one does not exist. Can either be from a lsit of defaults or from a URL
+	 * Set the default Gravatar to be used if one does not exist. Can either be from a list of defaults or from a URL
 	 * Defaults available: '404', 'mm', 'identicon', 'monsterid', 'wavatar', 'retro'
 	 *
 	 * @param string $default The default to be used
@@ -172,7 +175,7 @@ class Gravatar
 			'monsterid',
 			'wavatar',
 			'retro',
-			);
+		);
 
 		if (in_array((string) $default, $gravatarDefaults)) {
 			$this->default = (string) $default;
@@ -214,10 +217,12 @@ class Gravatar
 			'pg',
 			'r',
 			'x',
-			);
+		);
 
-		if (in_array((string) $rating, $allowedRatings)) {
-			$this->rating = (string) $rating;
+		$rating = (string) $rating;
+
+		if (in_array($rating, $allowedRatings)) {
+			$this->rating = $rating;
 		}
 
 		return $this;
@@ -228,7 +233,6 @@ class Gravatar
 	 *
 	 * Get the actual gravatar. Can either return the actual URL or a fully formed <img> tag
 	 *
-	 * @param bool   $img   Construct an <img> tag or return the pure URL? Defaults to false
 	 * @param string $email You can optionally set an email with this method and miss out all other methods for a default gravatar type
 	 *
 	 * @return object $this
@@ -236,7 +240,7 @@ class Gravatar
 	public function getGravatar($email = null)
 	{
 		if (isset($email)) {
-			$this->SetEmail((string) $email);
+			$this->setEmail((string) $email);
 		}
 
 		$url = self::BASEURL;
@@ -246,14 +250,14 @@ class Gravatar
 
 		$url .= $this->email;
 		$url .= $this->extension;
-		$url .= '?s='.$this->size;
-		$url .= '&amp;d='.$this->default;
+		$url .= '?s=' . $this->size;
+		$url .= '&amp;d=' . $this->default;
 
 		if ($this->forceDefault) {
 			$url .= '&amp;forcedefault=y';
 		}
 
-		$url .= '&amp;rating='.$this->rating;
+		$url .= '&amp;rating=' . $this->rating;
 
 		return $url;
 	}

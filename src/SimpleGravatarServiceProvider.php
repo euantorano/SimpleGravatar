@@ -30,10 +30,11 @@ class SimpleGravatarServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		$this->app['simplegravatar'] = $this->app->share(function($app)
-		{
-			return new Gravatar;
-		});
+		$this->app['simplegravatar'] = $this->app->share(
+			function ($app) {
+				return new Gravatar;
+			}
+		);
 	}
 
 	/**

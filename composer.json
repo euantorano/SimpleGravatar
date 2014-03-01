@@ -1,21 +1,27 @@
 {
-    "authors": [
-        {
-            "email": "euan@euantor.com",
-            "name": "Euan Torano"
-        }
-    ],
-    "autoload": {
-        "psr-0":         {
-            "Euantor\\SimpleGravatar": "src/"
-        }
-    },
-    "description": "A simple class to automagically generate a Gravatar given an email address.",
-    "license": "MIT",
-    "minimum-stability": "dev",
-    "name": "euantor/simple-gravatar",
-    "require": {
-        "illuminate/support": "4.0.x",
-        "php": ">=5.3.0"
-    }
+	"name" : "euantor/simple-gravatar",
+	"description" : "A simple class to automagically generate a Gravatar given an email address.",
+	"license" : "MIT",
+	"authors" : [
+		{
+			"email" : "euan@euantor.com",
+			"name" : "Euan Torano"
+		}
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Euantor\\SimpleGravatar\\" : "src/"
+		}
+	},
+	"require" : {
+		"illuminate/support" : "4.1.*",
+		"php" : ">=5.3.0"
+	},
+	"require-dev" : {
+		"phpunit/phpunit" : "3.7.*"
+	},
+	"config" : {
+		"preferred-install" : "dist"
+	},
+	"minimum-stability" : "stable"
 }
