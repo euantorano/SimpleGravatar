@@ -1,10 +1,10 @@
-SimpleGravatar
-==============
+#SimpleGravatar
+
+[![Build Status](https://travis-ci.org/euantorano/SimpleGravatar.png)](https://travis-ci.org/euantorano/SimpleGravatar)
 
 A super simple class to generate Gravatar images based on email addresses. Built to work with Laravel 4.
 
-Usage Example
-==============
+##Usage Example
 
 Add the Service Provider to your app/config/app.php file:
 
