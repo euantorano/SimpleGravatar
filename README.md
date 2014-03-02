@@ -1,6 +1,7 @@
 #SimpleGravatar
 
 [![Build Status](https://travis-ci.org/euantorano/SimpleGravatar.png)](https://travis-ci.org/euantorano/SimpleGravatar)
+[![Coverage Status](https://coveralls.io/repos/euantorano/SimpleGravatar/badge.png)](https://coveralls.io/r/euantorano/SimpleGravatar)
 
 A super simple class to generate Gravatar images based on email addresses. Built to work with Laravel 4.
 
