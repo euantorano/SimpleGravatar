@@ -36,3 +36,7 @@ You can optionally change the options too using a variety of methods to set the 
 Preferences are stored as attributes of the $gravatar object so once you set the attributes once, you don't need to do so again - meaning subsequently you only need call
 
 	$gravatar->getGravatar('newEmail@domain.com');
+
+###Alternative usage
+
+There is also a GravatarFacade class shipped with the package allowing you to easily use the Gravatar facade once it has been added to your app/config/app.php file.

@@ -11,7 +11,7 @@ class SimpleGravatarServiceProvider extends ServiceProvider
 	 *
 	 * @var bool
 	 */
-	protected $defer = false;
+	protected $defer = true;
 
 	/**
 	 * Bootstrap the application events.
@@ -30,11 +30,7 @@ class SimpleGravatarServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		$this->app['simplegravatar'] = $this->app->share(
-			function ($app) {
-				return new Gravatar;
-			}
-		);
+		$this->app->bind('simplegravatar', '\Euantor\SimpleGravatar\Gravatar');
 	}
 
 	/**
